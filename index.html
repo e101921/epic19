@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康檢視表</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        .header{
+            background:linear-gradient(navy, royalblue);
+            text-align: center;
+            height: 60px;
+        }
+        h1{
+            padding:10px;
+            margin: 0;
+            color:cornsilk;
+            text-shadow: 0 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>健康停看聽</h1>
+    </div>
+    <p>姓名 : </p>
+    <span>水資源補給</span>
+    <p class="waterInformation"></p>
+    <span>運動狀態</span>
+    <p class="sport"></p>
+    <span>腸胃健康</span>
+    <p class="poo"></p>
+    <script>
+        let $node = document.querySelector('p');
+
+        let _name = prompt('你的姓名是?')
+        
+        if(_name != null){
+            $node.textContent = $node.textContent + _name;    
+        }
+
+        let _water = document.querySelector('.waterInformation');
+        let water = confirm('今天喝水2000c.c.了嗎?');
+
+        if(water == true){
+            _water.textContent = _water.textContent + '你好棒!!!請繼續努力保持良好習慣。';
+        }else{
+            _water.textContent = _water.textContent + '請盡快補充水分，達成一天2000c.c.的目標';
+        }
+
+        let _sport = document.querySelector('.sport');
+        let sport = confirm('今天運動三十分鐘了嗎?');
+
+        if(sport == true){
+            _sport.textContent = _sport.textContent +'唉呦!' + _name + '～～今天不錯呦～～已經達成每天運動30分鐘的好習慣。';
+        }else{
+            _sport.textContent = _sport.textContent + '不要在懶惰了，' + _name + '，為了身體健康著想，請盡快擠出時間去運動，不然的話，肌肉會流失哦!';
+        }
+
+        let _poo = document.querySelector('.poo');
+        let poo = confirm('今天大便了嗎');
+
+        if(poo == true){
+            _poo.textContent = _poo.textContent + '今天' + _name + '怎麼那麼棒! 已經大完便了! 明天也要像今天一樣，繼續努力保持呦～～～'; 
+        }else{
+            _poo.textContent = _poo.textContent + _name + '～～～你這個大笨蛋! 還不快去廁所蹲大便!';
+        }
+
+
+        
+        console.log($node, _name, _water, water, _sport, sport);
+    </script>
+</body>
+</html>
